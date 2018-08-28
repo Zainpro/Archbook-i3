@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+#======================================================================================
+# 
+# AS ALLWAYS, KNOW WHAT YOU ARE DOING.
+#======================================================================================
+
+# if you are in a base system with no xserver and desktop...
+# this will install xserver
+
+echo "This is the opensource driver for intel"
+
+echo " Xserver setup"
+
+#sudo pacman -S xorg-server xorg-apps xorg-xinit xorg-twm xterm --noconfirm --needed
+sudo pacman -S xorg-server xorg-apps xorg-xinit xorg-twm xterm xf86-input-libinput acpid --noconfirm --needed
+sudo pacman -S xf86-video-intel --noconfirm --needed
+sudo systemctl enable acpid
+
+echo "################################################################"
+echo "###################    xorg installed     ######################"
+echo "################################################################"
+
